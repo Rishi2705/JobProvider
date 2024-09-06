@@ -1,23 +1,19 @@
 package com.example.jobprovider
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.animation.Animation
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.jobprovider.databinding.ActivityMainBinding
+import com.example.jobprovider.databinding.ActivityMainPageBinding
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class MainPageActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainPageBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
+        binding = ActivityMainPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.letsStartBtn.setOnClickListener {
-            startActivity(Intent(this, MainPageActivity::class.java))
-        }
-
+        var a = 0;
     }
 }
