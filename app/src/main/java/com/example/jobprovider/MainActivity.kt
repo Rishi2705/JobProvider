@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.letsStartBtn.setOnClickListener {
             startActivity(Intent(this, MainPageActivity::class.java))
+            finish()
         }
 
     }
