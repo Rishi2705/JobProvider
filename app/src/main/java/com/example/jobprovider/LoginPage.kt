@@ -1,23 +1,20 @@
 package com.example.jobprovider
 
-import android.content.Intent
+import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.animation.Animation
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.jobprovider.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class LoginPage : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    @SuppressLint("MissingSuperCall")
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        binding.letsStartBtn.setOnClickListener(){
-            var intent= (Intent(this,LoginPage::class.java))
-            startActivity(intent)
         }
     }
-}
