@@ -1,3 +1,5 @@
+import java.net.URL
+
 pluginManagement {
     repositories {
         google {

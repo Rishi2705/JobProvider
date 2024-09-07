@@ -2,6 +2,11 @@ package com.example.jobprovider
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.MediaStore
+import android.util.Log
+import android.view.View
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.jobprovider.databinding.ActivityMainPageBinding
@@ -13,6 +18,9 @@ class MainPageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val str = intent.getStringExtra("name")
+        val old = binding.userName.text
+        binding.userName.text = "$old $str"
         binding.userImg.setOnClickListener {
             startActivity(Intent(this, ProfilePage::class.java))
         }
@@ -35,15 +43,27 @@ class MainPageActivity : AppCompatActivity() {
             val item1 = user(type[i],date[i],slot[i],day[i])
             al.add(item1)
         }
+
         binding.recycle.adapter = ItemAdapter(this, al)
 
         binding.seeAll.setOnClickListener {
             startActivity(Intent(this,SlotActivity::class.java))
         }
 
+        binding.userImg.setOnClickListener{
+            pickImage()
+        }
 
 
-
-
+    }
+    fun pickImage() {
+        val intent = Intent(MediaStore.ACTION_PICK_IMAGES)
+        startActivityForResult(intent,101)
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == 101 && resultCode == RESULT_OK) {
+            binding.userImg.setImageURI(data?.data)
+        }
     }
 }

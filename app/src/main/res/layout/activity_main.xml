@@ -32,7 +32,7 @@
         android:id="@+id/main_idea"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Idea of our Application"
+        android:text="Revolutionizing Offline Hiring and Preparation"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintTop_toBottomOf="@id/app_name"
@@ -56,7 +56,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginHorizontal="40dp"
-        android:text="uiawvferfeifeuifhuifhwuifhwiufhwufhw"
+        android:text="Efficient Hiring for Companies, easy Preparation for Students"
         app:layout_constraintBottom_toTopOf="@id/lets_start_btn"
         android:layout_marginBottom="25dp"/>
 
