@@ -1,11 +1,8 @@
 package com.example.jobprovider
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.jobprovider.databinding.ActivityMainBinding
 import com.example.jobprovider.databinding.ActivityMainPageBinding
 
 class MainPageActivity : AppCompatActivity() {
@@ -14,6 +11,17 @@ class MainPageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        var a = 0;
+        binding.userImg.setOnClickListener {
+            startActivity(Intent(this, ProfilePage::class.java))
+        }
+        binding.filter.setOnClickListener {
+            startActivity(Intent(this, FilterScreen::class.java))
+        }
+
+        binding.cv2.setOnClickListener{
+            startActivity(Intent(this, ResumeActivity::class.java))
+        }
+
+
     }
 }

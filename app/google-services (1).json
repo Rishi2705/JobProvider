@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "608550296937",
+    "project_id": "jobprovider-dc849",
+    "storage_bucket": "jobprovider-dc849.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608550296937:android:ba9658131b573d028371f8",
+        "android_client_info": {
+          "package_name": "com.example.jobprovider"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGVd6Vx9RCGyonxeC8i5YLQGJEzTL7Yvc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         binding.letsStartBtn.setOnClickListener {
-            startActivity(Intent(this, MainPageActivity::class.java))
+            startActivity(Intent(this, LoginPage::class.java))
             finish()
         }
 
