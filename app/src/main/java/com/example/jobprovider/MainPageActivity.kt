@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
+import android.widget.ProgressBar
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -12,12 +13,18 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.jobprovider.databinding.ActivityMainPageBinding
 
 class MainPageActivity : AppCompatActivity() {
+    var Prog: ProgressBar? = null
     private lateinit var binding: ActivityMainPageBinding
+
     lateinit var al : ArrayList<user>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val percen = 3.0*100/10
+        binding.indi.setText((String.format("%s", "3/10")).toString())
+        Prog?.setProgress(percen.toInt())
         val str = intent.getStringExtra("name")
         val old = binding.userName.text
         binding.userName.text = "$old $str"
